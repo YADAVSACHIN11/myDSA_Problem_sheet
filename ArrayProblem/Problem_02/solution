@@ -1,0 +1,10 @@
+vector<int> rotateArray(vector<int>arr, int k) {
+    vector<int>ans;
+    for(int i=k;i<arr.size();i++){
+      ans.push_back(arr[i]);
+    }
+    for(int j=0;j<k;j++){
+        ans.push_back(arr[j]);
+    }
+    return ans;
+}
