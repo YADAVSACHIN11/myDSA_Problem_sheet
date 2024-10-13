@@ -1,0 +1,15 @@
+#include <bits/stdc++.h> 
+int minElementsToRemove(vector<int> &arr)
+{
+	unordered_map<int,int>ans;  // <int,int> == <value,key> and in this key means count of value.
+	int C_ans=0;
+	for(int val:arr){
+		ans[val]++;
+	}
+	for(auto s:ans){
+		if(s.second>1){
+			C_ans+=s.second-1;
+		}
+	}
+	return C_ans;
+}
