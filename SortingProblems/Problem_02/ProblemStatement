@@ -1,0 +1,65 @@
+Problem statement
+Selection sort is one of the sorting algorithms that works by repeatedly finding the minimum element from the unsorted part of the array and putting it at the beginning of the unsorted region of the array.
+
+You are given an unsorted array consisting of N non-negative integers. Your task is to sort the array in non-decreasing order using the Selection Sort algorithm.
+
+For Example:
+Initial Array:
+
+  [29, 72, 98, 13, 87, 66, 52, 51, 36]
+
+Step 1 (k = 0):
+      Start by assuming the first element (29) is the smallest. Set min_idx = 0.
+Compare 29 with the rest of the elements:
+      29 vs 72: No change.
+      29 vs 98: No change.
+      29 vs 13: Set min_idx = 3 (since 13 is smaller than 29).
+      Continue comparing 13 with the rest: 87, 66, 52, 51, 36. No changes.
+      Swap arr[0] with arr[3]. The array becomes:
+Array after Step 1: [13, 72, 98, 29, 87, 66, 52, 51, 36]
+Step 2 (k = 1):
+      Start with arr[1] = 72 as the smallest. Set min_idx = 1.
+      Compare 72 with the rest of the elements:
+      72 vs 98: No change.
+      72 vs 29: Set min_idx = 3.
+      Continue comparing 29 with 87, 66, 52, 51, and 36. No changes.
+      Swap arr[1] with arr[3]. The array becomes:
+Array after Step 2: [13, 29, 98, 72, 87, 66, 52, 51, 36]
+Step 3 (k = 2):
+      Start with arr[2] = 98 as the smallest. Set min_idx = 2.
+      Compare 98 with the rest of the elements:
+      98 vs 72: Set min_idx = 3.
+      Continue comparing 72 with 87, 66, 52, 51, and 36. Set min_idx = 8 (since 36 is the smallest).
+      Swap arr[2] with arr[8]. The array becomes:
+Array after Step 3: [13, 29, 36, 72, 87, 66, 52, 51, 98]
+Step 4 (k = 3):
+      Start with arr[3] = 72 as the smallest. Set min_idx = 3.
+      Compare 72 with the rest of the elements:
+      72 vs 87: No change.
+      72 vs 66: Set min_idx = 5.
+      Continue comparing 66 with 52, 51, and 98. Set min_idx = 7 (since 51 is the smallest).
+      Swap arr[3] with arr[7]. The array becomes:
+Array after Step 4: [13, 29, 36, 51, 87, 66, 52, 72, 98]
+Step 5 (k = 4):
+      Start with arr[4] = 87 as the smallest. Set min_idx = 4.
+      Compare 87 with the rest of the elements:
+      87 vs 66: Set min_idx = 5.
+      Continue comparing 66 with 52 and 72. Set min_idx = 6 (since 52 is smaller).
+      Swap arr[4] with arr[6]. The array becomes:
+Array after Step 5: [13, 29, 36, 51, 52, 66, 87, 72, 98]
+Step 6 (k = 5):
+      Start with arr[5] = 66 as the smallest. Set min_idx = 5.
+      Compare 66 with the rest of the elements:
+      66 vs 87: No change.
+      66 vs 72: No change.
+      No swap needed since 66 is already in place.
+Array after Step 6: [13, 29, 36, 51, 52, 66, 87, 72, 98]
+Step 7 (k = 6):
+      Start with arr[6] = 87 as the smallest. Set min_idx = 6.
+      Compare 87 with 72: Set min_idx = 7.
+      Swap arr[6] with arr[7]. The array becomes:
+Array after Step 7: [13, 29, 36, 51, 52, 66, 72, 87, 98]
+Step 8 (k = 7):
+      No need to check further, as only 87 and 98 are left, which are already sorted.
+      Final Sorted Array:
+      [13, 29, 36, 51, 52, 66, 72, 87, 98]
