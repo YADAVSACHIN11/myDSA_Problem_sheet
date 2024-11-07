@@ -1,0 +1,23 @@
+#include <bits/stdc++.h> 
+int minimumParentheses(string pattern) {
+    stack<char>res;
+    int n=pattern.size();
+    int count1=0,count2=0;
+    for(int i=0;i<n;i++){
+        if(pattern[i]=='('){
+            res.push(pattern[i]);
+            count1++;
+        }
+        else if(pattern[i]==')'){
+            if (!res.empty() && res.top() == '(') {
+              res.pop();
+              count1--;
+            }
+
+            else {
+              count2++;
+            }
+        }
+    }
+    return count1+count2;
+}
