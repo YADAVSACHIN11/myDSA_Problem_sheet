@@ -1,0 +1,19 @@
+class Solution {
+  public:
+
+    void rotateArr(vector<int>& arr, int d) {
+        int count=0;
+        int n=arr.size();
+        d=d%n;
+        vector<int>temp(n);
+        for(int j=d;j<n;j++){
+            temp[count++]=arr[j];
+        }
+        for(int k=0;k<d;k++){
+            temp[count++]=arr[k];
+        }
+        for(int i=0;i<n;i++){
+            arr[i]=temp[i];
+        }
+    }
+};
