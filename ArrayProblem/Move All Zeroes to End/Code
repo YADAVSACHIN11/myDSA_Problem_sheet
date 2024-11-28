@@ -1,0 +1,16 @@
+class Solution {
+  public:
+    void pushZerosToEnd(vector<int>& arr) {
+        int j=0;
+        int n=arr.size();
+        for(auto v:arr){
+            if(v!=0){
+                arr[j]=v;
+                j++;
+            }
+        }
+        for(int i=j;i<n;i++){
+            arr[i]=0;
+        }
+    }
+};
