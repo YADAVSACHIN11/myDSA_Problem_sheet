@@ -1,0 +1,20 @@
+class Solution {
+  public:
+    // Function to find the majority elements in the array
+    vector<int> findMajority(vector<int>& arr) {
+        unordered_map<int,int>freqMap;
+        int n=arr.size();
+        int t=n/3;
+        for(int val:arr){
+            freqMap[val]++;
+        }
+        vector<int>ans;
+        for(auto& pair:freqMap){
+            if(pair.second>t){
+                ans.push_back(pair.first);
+            }
+        }
+        sort(ans.begin(),ans.end());
+        return ans;
+    }
+};
