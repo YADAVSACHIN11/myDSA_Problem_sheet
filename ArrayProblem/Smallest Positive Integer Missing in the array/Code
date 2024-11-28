@@ -1,0 +1,17 @@
+class Solution {
+  public:
+    int missingNumber(vector<int> &arr) {
+        unordered_set<int>SetArr;
+        for(auto v:arr){
+            if(v>0)
+                SetArr.insert(v);
+        }
+        int missing=1;
+        for(auto s:SetArr){
+            if(SetArr.count(missing)){
+                missing++;
+            }
+        }
+        return missing;
+    }
+};
