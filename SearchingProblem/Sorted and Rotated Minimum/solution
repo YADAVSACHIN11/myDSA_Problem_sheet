@@ -1,0 +1,15 @@
+class Solution {
+  public:
+    int findMin(vector<int>& arr) {
+        int s=INT_MAX;
+        int count=0;
+        for(int v:arr){
+            if(v<s){
+                s=v;
+                count++;
+                if(count>1)return s;
+            }
+        }
+        return arr[0];
+    }
+};
