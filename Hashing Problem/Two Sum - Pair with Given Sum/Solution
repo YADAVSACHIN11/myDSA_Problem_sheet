@@ -1,0 +1,13 @@
+class Solution {
+  public:
+    bool twoSum(vector<int>& arr, int target) {
+        unordered_set<int>ans;
+        for(int val:arr){
+            if(ans.count(target-val))return true;
+            else{
+                ans.insert(val);
+            }
+        }
+        return false;
+    }
+};
