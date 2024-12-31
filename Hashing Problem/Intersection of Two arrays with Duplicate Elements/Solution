@@ -1,0 +1,17 @@
+class Solution {
+  public:
+    vector<int> intersectionWithDuplicates(vector<int>& a, vector<int>& b) {
+        int n=a.size();
+        int m=b.size();
+        unordered_set<int>ans;
+        vector<int>res;
+        for(int val:a){
+            ans.insert(val);
+        }
+        for(int val:b){
+            if(ans.find(val)!=ans.end())res.push_back(val);
+            ans.erase(val);
+        }
+        return res;
+    }
+};
