@@ -1,0 +1,16 @@
+class Solution {
+  public:
+    vector<vector<string>> anagrams(vector<string>& arr) {
+        unordered_map<string, vector<string>>mp;
+        vector<vector<string>>res;
+            for(int i=0;i<arr.size();i++){
+                string s=arr[i];
+                sort(s.begin(),s.end());
+                mp[s].push_back(arr[i]);
+            }
+        for(const auto& v:mp){
+            res.push_back(v.second);
+        }
+        return res;
+    }
+};
